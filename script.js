@@ -10,6 +10,10 @@ function createGrid(numberOfSquares) {
     newSquare.style.borderRight = "1px solid black";
     newSquare.style.borderBottom = "1px solid black";
     newSquare.style.boxSizing = "border-box";
+    newSquare.classList.add("square");
+    newSquare.addEventListener("mouseover", (event) =>
+      event.target.classList.add("black-color")
+    );
     container.appendChild(newSquare);
   }
 }

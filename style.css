@@ -8,3 +8,7 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+
+.black-color {
+  background-color: black;
+}
