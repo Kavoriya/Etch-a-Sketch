@@ -45,7 +45,7 @@ function createGrid(xAxis, yAxis) {
     newSquare.style.boxSizing = "border-box";
     newSquare.classList.add("square");
     newSquare.addEventListener("mouseover", (event) =>
-      event.target.style.backgroundColor = "black"
+      event.target.style.background = "rgba(0, 0, 0, 1.0)"
     );
     container.appendChild(newSquare);
   }
@@ -74,7 +74,7 @@ function changeToRandom() {
 function changeToBlack() {
   let squares = document.getElementsByClassName("square");
   [...squares].forEach(square => square.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = "black";
+    event.target.style.background = "rgba(0, 0, 0, 1.0)"
   }));
 }
 
