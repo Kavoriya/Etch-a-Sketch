@@ -39,7 +39,7 @@ function createGrid(xAxis, yAxis) {
     newSquare.style.boxSizing = "border-box";
     newSquare.classList.add("square");
     newSquare.addEventListener("mouseover", (event) =>
-      event.target.classList.add("black-color")
+      event.target.style.backgroundColor = "black"
     );
     container.appendChild(newSquare);
   }
@@ -51,3 +51,17 @@ function removeGrid() {
   let squares = document.querySelectorAll(".square");
   squares.forEach(square => square.remove());
 }
+
+function changeToRandom() {
+  let xColor = 0;
+  let yColor = 0;
+  let zColor = 0;
+  let squares = document.getElementsByClassName("square");
+  [...squares].forEach(square => square.addEventListener("mouseover", (event) => {
+    xColor = Math.floor((Math.random() * 256));
+    yColor = Math.floor((Math.random() * 256));
+    zColor = Math.floor((Math.random() * 256));
+    event.target.style.backgroundColor = `rgb(${xColor}, ${yColor}, ${zColor})`;
+  }));
+}
+
