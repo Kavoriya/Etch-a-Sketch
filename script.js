@@ -3,6 +3,12 @@ let container = document.getElementById("container");
 let btnRemoveGrid = document.getElementById("removeGrid");
 btnRemoveGrid.addEventListener("click", removeGrid);
 
+let btnRandomColors = document.getElementById("randomColors");
+btnRandomColors.addEventListener("click", changeToRandom);
+
+let btnBlackColor = document.getElementById("blackColor");
+btnBlackColor.addEventListener("click", changeToBlack);
+
 let btn16x16 = document.getElementById("btn16x16");
 btn16x16.addEventListener("click", () => {
   removeGrid()
@@ -62,6 +68,13 @@ function changeToRandom() {
     yColor = Math.floor((Math.random() * 256));
     zColor = Math.floor((Math.random() * 256));
     event.target.style.backgroundColor = `rgb(${xColor}, ${yColor}, ${zColor})`;
+  }));
+}
+
+function changeToBlack() {
+  let squares = document.getElementsByClassName("square");
+  [...squares].forEach(square => square.addEventListener("mouseover", (event) => {
+    event.target.style.backgroundColor = "black";
   }));
 }
 
